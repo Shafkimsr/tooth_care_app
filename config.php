@@ -14,7 +14,6 @@ date_default_timezone_set('Asia/Colombo');
 function current_domain()
 {
     return protocol() . $_SERVER['HTTP_HOST'] . '/tooth_care_app_bin';
-    // return protocol() . $_SERVER['HTTP_HOST'];
 }
 
 function currentUrl()
