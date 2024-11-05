@@ -97,21 +97,28 @@ $currentFilename = basename($currentUrl);  // e.g., "dashboard.php"
                         </a>
                     </li>
 
-                    <!-- Dashboard -->
+
                     <li class="menu-item <?= $currentFilename === "appointments.php" ? 'active' : '' ?> ">
                         <a href="<?= url('views/admin/appointments.php') ?>" class="menu-link">
                             <i class="menu-icon tf-icons  bx bx-collection"></i>
                             <div data-i18n="Analytics">Appointments</div>
                         </a>
                     </li>
+                    <?php if ($permission == 'operator') : ?>
+                        <li class="menu-item <?= $currentFilename === "doctors.php" ? 'active' : '' ?> ">
+                            <a href="<?= url('views/admin/doctors.php') ?>" class="menu-link">
+                                <i class="menu-icon tf-icons  bx bx-plus-medical"></i>
+                                <div data-i18n="Analytics">Doctors</div>
+                            </a>
+                        </li>
 
-                    <li class="menu-item <?= $currentFilename === "users.php" ? 'active' : '' ?> ">
-                        <a href="<?= url('views/admin/users.php') ?>" class="menu-link">
-                            <i class="menu-icon tf-icons  bx bx-user"></i>
-                            <div data-i18n="Analytics">Users</div>
-                        </a>
-                    </li>
-
+                        <li class="menu-item <?= $currentFilename === "users.php" ? 'active' : '' ?> ">
+                            <a href="<?= url('views/admin/users.php') ?>" class="menu-link">
+                                <i class="menu-icon tf-icons  bx bx-user"></i>
+                                <div data-i18n="Analytics">Users</div>
+                            </a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </aside>
             <!-- / Menu -->
